@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<form action="#"
+      th:action="@{/update/{id}(id=${car.id})}"
+      th:object="${car}"
+      method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Аты">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+
+    <label for="marka">Marka</label>
+    <input type="text" th:field="*{marka}" id="marka" placeholder="Маркасы">
+    <span th:if="${#fields.hasErrors('marka')}" th:errors="*{marka}"></span>
+
+    <label for="memory">Memory</label>
+    <input type="text" th:field="*{memory}" id="memory" placeholder="Қозғалтқыштың көлемі">
+    <span th:if="${#fields.hasErrors('memory')}" th:errors="*{memory}"></span>
+
+    <label for="ram">Ram</label>
+    <input type="text" th:field="*{ram}" id="ram" placeholder="Күші">
+    <span th:if="${#fields.hasErrors('ram')}" th:errors="*{ram}"></span>
+
+    <label for="country">Country</label>
+    <input type="text" th:field="*{country}" id="country" placeholder="Ел">
+    <span th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></span>
+
+    <label for="price">Price</label>
+    <input type="text" th:field="*{price}" id="price" placeholder="Баға">
+    <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
+
+
+    <input type="submit" value="Update Phone">
+</form>
+
+</body>
+</html>
